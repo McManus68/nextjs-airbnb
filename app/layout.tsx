@@ -7,7 +7,6 @@ import ToasterProvider from '@/app/providers/ToasterProvider';
 import React from 'react';
 import LoginModal from '@/app/components/modals/LoginModal';
 import getCurrentUser from '@/app/actions/getCurrentUser';
-import { SafeUser } from '@/app/types';
 import RentModal from '@/app/components/modals/RentModal';
 
 export const metadata = {
@@ -36,7 +35,7 @@ export default async function RootLayout({
           <RegisterModal />
           <Navbar currentUser={currentUser} />
         </ClientOnly>
-        {children}
+        <div className="pb-20 pt-28">{children}</div>
       </body>
     </html>
   );
