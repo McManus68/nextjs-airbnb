@@ -3,11 +3,12 @@ import { Nunito } from 'next/font/google';
 import Navbar from '@/app/components/navbar/Navbar';
 import ClientOnly from '@/app/components/ClientOnly';
 import RegisterModal from '@/app/components/modals/RegisterModal';
+import RentModal from '@/app/components/modals/RentModal';
+import SearchModal from '@/app/components/modals/SearchModal';
+import LoginModal from '@/app/components/modals/LoginModal';
 import ToasterProvider from '@/app/providers/ToasterProvider';
 import React from 'react';
-import LoginModal from '@/app/components/modals/LoginModal';
 import getCurrentUser from '@/app/actions/getCurrentUser';
-import RentModal from '@/app/components/modals/RentModal';
 
 export const metadata = {
   title: 'Airbnb',
@@ -30,6 +31,7 @@ export default async function RootLayout({
       <body className={font.className}>
         <ClientOnly>
           <ToasterProvider />
+          <SearchModal />
           <RentModal />
           <LoginModal />
           <RegisterModal />
