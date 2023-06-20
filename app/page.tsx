@@ -6,11 +6,11 @@ import ListingCard from '@/app/components/listings/ListingCard';
 import getCurrentUser from '@/app/actions/getCurrentUser';
 import { SafeListing } from '@/app/types';
 
-export const dynamic = 'force-static';
-
 interface HomeProps {
   searchParams: IListingParams;
 }
+
+export const dynamic = 'force-dynamic';
 
 const Home = async ({ searchParams }: HomeProps) => {
   const listings = await getListings(searchParams);
